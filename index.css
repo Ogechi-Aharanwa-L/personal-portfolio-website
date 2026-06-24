@@ -37,14 +37,28 @@
     --shadow-md: 0 4px 12px rgba(75, 0, 130, 0.15);
     --shadow-lg: 0 8px 24px rgba(75, 0, 130, 0.2);
 }
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+}
 
 /* Base body styles */
+
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--off-white);
     color: var(--text-dark);
     line-height: 1.6;
     padding-bottom: 80px; /* Account for sticky footer height */
+
 }
 
 /* ============================================
@@ -1117,8 +1131,8 @@ body {
    ============================================ */
 .footer {
     position: sticky;
-    bottom: 0;
-    z-index: 1000;
+    bottom: 0; 
+    z-index: 1000; 
     width: 100%;
     background-color: var(--purple-dark);
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
@@ -1445,6 +1459,7 @@ body {
     .footer {
         height: 60px;
         padding: 0 2rem;
+        margin-top: auto;
     }
 
     .footer-container {
