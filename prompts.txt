@@ -1,0 +1,132 @@
+Prompt 1.(Overview)
+I am new to Technology and have a limited understanding of coding.Act as a senior full-stack web developer who helps beginners build quickly.
+Could you help me build the landing page of my 'personal portfolio site'? We will build it in sections according to prompts, starting with the menu bar(Nav bar),hero Section, About me, Main Section(which will show projects completed in my Tech Program in a grid). 
+Each program card should have a high-level summary of what the project set out to solve, and show how it went(from design to coding to delivery),then a footer.The footer and the menu bar should be sticky.
+Now, before you start the menu bar, show that you understand the requirements and what I want. My favorite color is royal purple, use a professional shade of it.
+
+Prompt 2 (Navigation Bar)
+First, we build the navigation bar(menu bar),the top left of the menu bar should have a logo - the logo should be carved in the business colors and name, followed by navigation links in the middle of the bar (these links should include home, about me, projects, and contact) they will be in the middle of the nav bat and be follwed by a hamburger on mobile only.
+- The nav bar should be sticky, responsive, with a hamburger (toggle) on mobile, but on the md, lg, and xl screens, there should be the nav links in a flex.  
+- The name should be styled in calligraphy and the entire code separated into its own HTML and CSS files. 
+
+Vibe Engineering:
+ - Fixed the hambuger and gap errors on md and lg screens.
+ - Fixed the cramping of the nav bar.
+ - Made the navbar content have the same max-width as the hero page (not full width) at 1024px and above, using a wrapper for the sticky background
+
+Prompt 3 (Hero Section)
+Build the hero section(as a snippet, Do NOT generate a fresh HTML page) with a 100vh coverage,an animated background with details; 
+- It should have two columns;a text on the lefte side of the background that says "Hi, I'm Oge. Aspiring Full-Stack Developer & Tech Enthusiast".
+- With a description below it which says "I build digital solutions that blend creativity with clean code. Currently growing my skills through a hands-on Tech Program, turning ideas into real projects". Currently building projects through my Tech Program, turning ideas into clean, functional code." and on the other my image. - There should be a button that links to my cv and another that says"View My Work" on the hero page.
+
+Vibe Engineering:
+- Adjusted the width of the Hero Section.
+- Fixed the alignment of the hero contents
+- At tablet screen (around 800px), centered all items including the hero description, stats, and buttons using flexbox column alignment.
+- Centered the hero-items on md screen.
+.hero {
+    max-width: 1200px;/*Controls the width on larger screen*/
+    margin: 0 auto;
+    width: 100%;
+}
+Prompt 4 (About Me Section)
+Continue with the about me section snippet. Start with a header"From Finance Operations to Full-Stack Development" 
+- Improve on the provided paragraph text about financial services background and transition to web development. 
+- Include these skills: HTML5, CSS3, Tailwind CSS, Vibe Coding, Vibe Engineering, Tokenization, Problem Solving, Financial Analysis, Process Optimization.
+- The about section like the hero section should be in 2 columns, my image on the left and text about me and my journey on the right,
+ 
+Vibe Engineering:
+- Style the journey narrative with bold keywords and italic quotes for emphasis.
+- Added a cta button with hover effects to direct viewers to what I have built at the bottom of the section.
+
+Prompt 5 (Projects Grid section)
+Build this project grid section as a snippet.
+- start with a befitting header, a short centralized paragraph after the header and
+- a grid that will be stacked on mobile and in 2 columns on md and lg screens should have 3 cloumns and two rows. 
+- The cards should each display, an image of the project, the title, a brief description of it, the projects prgression from design to coding to delivery, 
+- then buttons at the bottom showings the skills employed in the project.
+- Fill the images on the grid with placeholders for the missing 3 projects, and I will swap them in later. 
+- Each program card should have a high-level summary of what the project set out to solve, and show how it went from design to coding to delivery.
+
+Vibe Engineering:
+- Fixed the HTML structure for real project images by removing duplicate project-image classes and placeholder classes.
+- Used object-fit: contain for one specific project image (Project 4) that was narrow, while keeping object-fit: cover for others.
+- Made project cards compact on mobile by reducing image height to 140px, truncating descriptions to 2 lines, hiding the journey timeline completely, and using smaller tags.
+
+Prompt 6 (Contact Section)
+ Build a contact form. Include email, location, phone number. 
+ - Add social links: GitHub, LinkedIn, Twitter.
+
+ Vibe Engineering:
+ - Created a full contact section BEFORE the sticky footer, with a two-column layout: form on the left, contact info cards on the right.
+ - On tablet (768px-991px), modified the contact section in two columns like desktop (form + info side-by-side), not stacked.
+ - Fixed phone numbers breaking line-by-line using word-break: keep-all and white-space: nowrap
+ 
+ Prompt 7(Footer Section)
+ Now, build the footer, the footer, as the menu bar should be sticky. Use the same color as the nav bar.
+ - Added quick links and a back to top button.
+ - Used an inverted color scheme: dark purple footer (#2E0854) contrasting with the white navbar, rather than matching it.
+ Add a circular back-to-top button with gradient background that smooth-scrolls to top.
+- Included social icons (GitHub, LinkedIn, Twitter) in the footer.
+- On tablet (800px), kept footer horizontal with copyright at bottom, not fully stacked.
+- Hid quick links and kept a minimal single-row layout on mobile (480px), added a back-to-top cta.
+ 
+
+.info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+/* ============================================
+   PROJECT CARDS FIX - MOBILE
+   ============================================ */
+
+@media (max-width: 600px) {
+    .projects {
+        padding: 3rem 1rem;            /* Reduce section padding */
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;     /* Ensure 1 column */
+        gap: 1.5rem;                     /* Reduce gap between cards */
+    }
+    
+    .project-card {
+        border-radius: 12px;            /* Slightly smaller radius */
+    }
+    
+    .project-image {
+        height: 200px;                   /* Reduce image height */
+    }
+    
+    .project-content {
+        padding: 1.2rem;                 /* Reduce card padding */
+    }
+    
+    .project-name {
+        font-size: 1.2rem;               /* Smaller title */
+    }
+    
+    .project-summary {
+        font-size: 0.9rem;               /* Smaller text */
+        line-height: 1.5;
+    }
+    
+    .project-journey {
+        padding-left: 0;                 /* Remove left indent */
+    }
+    
+    .step-desc {
+        font-size: 0.75rem;              /* Smaller journey text */
+    }
+    
+    .project-tags {
+        gap: 0.4rem;                     /* Tighter tags */
+    }
+    
+    .tag {
+        padding: 4px 10px;               /* Smaller tags */
+        font-size: 0.75rem;
+    }
+}
